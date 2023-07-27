@@ -1,17 +1,30 @@
-import { getFirestore } from '../firebase.js'
+import db from '../firebse'
 import { useEffect, useState } from 'react'
 import { collection, onSnapshot } from 'firebase/firestore'
+import './todos.css'
 
-export default function getTodos() {
-    useEffect(() => {
-        onSnapshot(collection(db, 'allTodos'), (snapshot) => {
-            console.log(snapshot)
-            const a = snapshot
+export default function GetTodos() {
+    const [todos, setTodos] = useState([]);
+    console.log(todos)
+
+    const getAllTodos = () => {
+        onSnapshot(
+            collection(db, 'allTodos'), (snapshot) => {
+                setTodos(snapshot.docs.map( doc => {
+                    return ({...doc.data(), id: doc.id})
+                }))
         })
-    }, [])
+    }
+    useEffect(() => 
+        getAllTodos()
+    , [])
     return (
-        <div>
-            {a}
+        <div className='todos-container'>
+            {todos.map(todo => (
+                <li key={todo.id}>
+                    <p>{todo.id}</p>
+                </li>
+            ))}
         </div>
     )
 }

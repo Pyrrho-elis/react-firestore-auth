@@ -1,10 +1,10 @@
 import "./styles.css";
-import getTodos from "./components/getTodos";
+import GetTodos from "./components/getTodos";
 
 export default function App() {
   return (
     <div className="App">
-     <getTodos />
+     <GetTodos />
     </div>
   );
 }
