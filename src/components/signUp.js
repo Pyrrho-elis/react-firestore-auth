@@ -1,3 +1,5 @@
-import React from 'react'
+import React from "react";
 
-export def
+export default function signUp() {
+  return;
+}
