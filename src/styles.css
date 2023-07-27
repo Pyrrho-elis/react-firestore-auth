@@ -1,4 +1,14 @@
+body {
+  background-color: #111;
+}
+
 .App {
-  font-family: sans-serif;
+  display: flex;
+  font-family: monospace;
   text-align: center;
+  justify-content: center;
+}
+
+.App li {
+  list-style: none;
 }

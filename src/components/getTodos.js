@@ -21,8 +21,8 @@ export default function GetTodos() {
     return (
         <div className='todos-container'>
             {todos.map(todo => (
-                <li key={todo.id}>
-                    <p>{todo.id}</p>
+                <li className="todos-list-container" key={todo.id}>
+                    <p className='todos'>{todo.user_todo}</p>
                 </li>
             ))}
         </div>
