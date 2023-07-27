@@ -4,7 +4,14 @@ import { collection, onSnapshot } from 'firebase/firestore'
 
 export default function getTodos() {
     useEffect(() => {
-        onSnapshot(collection(db, 'allTodos'), (snapshot) => {console.log(snapshot)})
+        onSnapshot(collection(db, 'allTodos'), (snapshot) => {
+            console.log(snapshot)
+            const a = snapshot
+        })
     }, [])
-    return
+    return (
+        <div>
+            {a}
+        </div>
+    )
 }
